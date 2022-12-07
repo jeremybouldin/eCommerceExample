@@ -1,5 +1,12 @@
 const container = document.getElementById('container')
 const clearBtn = document.getElementById('clear-btn')
+// const body = document.querySelector('body')
+
+// console.log(body)
+window.addEventListener('click', function(e){
+    console.log(window.getComputedStyle(e.target))
+    // console.log(e.target.parentElement.classList.value.includes('product'))
+})
 
 const products = [
     {
@@ -28,7 +35,7 @@ for (let product of products){
     productsHtml += `
     <div class="product on-offer">
         <h3>${product.name}</h3>
-         <h4> £${product.price}</h4>
+        <h4> £${product.price}</h4>
         <img src="${product.image}">
         <button id="${product.id}">Buy Now</button>
     </div>
@@ -36,10 +43,10 @@ for (let product of products){
 }
 container.innerHTML = productsHtml
 
-container.addEventListener('click', function(e){
-    document.getElementById(e.target.id).parentElement.classList.add('purchased')
-    document.getElementById(e.target.id).parentElement.classList.remove('on-offer')
-})
+// container.addEventListener('click', function(e){
+//     document.getElementById(e.target.id).parentElement.classList.add('purchased')
+//     document.getElementById(e.target.id).parentElement.classList.remove('on-offer')
+// })
 
 clearBtn.addEventListener('click', function(e){
     const productsArray = document.getElementsByClassName('product')
@@ -47,4 +54,5 @@ clearBtn.addEventListener('click', function(e){
         product.classList.remove('purchased')
         product.classList.add('on-offer')
     }
+    console.log(productsArray)
 })
