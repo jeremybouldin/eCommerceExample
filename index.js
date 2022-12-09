@@ -4,7 +4,7 @@ const clearBtn = document.getElementById('clear-btn')
 
 // console.log(body)
 window.addEventListener('click', function(e){
-    console.log(window.getComputedStyle(e.target))
+    console.log(window.getComputedStyle(e.target).display)
     // console.log(e.target.parentElement.classList.value.includes('product'))
 })
 
